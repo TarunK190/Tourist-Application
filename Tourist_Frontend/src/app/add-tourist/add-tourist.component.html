@@ -1,0 +1,95 @@
+
+
+<div  class="col-md-2 offset-mid-3">
+    <div style="color:darkgoldenrod">
+<h3 style="margin-left: 250%;width: 100%;" >Add Tourist:</h3>
+</div>
+
+<div class="img"></div>
+<body >
+    <div class="mb-3" >
+
+        <form  (ngSubmit) ="onSubmit()" style="margin-left: 250%;width: 100%;" >
+<div   >
+    
+    <label >Id</label>
+    <input  type="number"    min="0" max="9999" class="form-control border-success" id="id" [(ngModel)]="tourists.id" name="id"   value=""required pattern="[0-9]{4}"   #id="ngModel">
+    
+    <span *ngIf="id.invalid && (id.dirty || id.untouched)">
+    <small class="alert-danger" *ngIf="id.errors?.['required']">Field should not be empty</small>
+  
+</span>
+
+</div>
+<div >
+    <label >First Name</label>
+    <input type="text" onkeydown="return /[a-z]/i.test(event.key)"  class="form-control border-success " id="firstName" [(ngModel)]="tourists.firstName" name="firstName"  maxlength="12"  value=""required  #firstName="ngModel" >
+    
+    <span *ngIf="firstName.invalid && (firstName.dirty || firstName.untouched)">
+        <small class="alert-danger" *ngIf="firstName.errors?.['required']">Field should not be empty</small>
+    </span>
+
+</div>
+<div>
+    <label >Last Name</label>
+    <input type="text"  onkeydown="return /[a-z]/i.test(event.key)" class="form-control border-success" id="lastName" [(ngModel)]="tourists.lastName" name="lastName" maxlength="12" value=""required  #lastName="ngModel">
+
+ 
+    <span *ngIf="lastName.invalid && (lastName.dirty || lastName.untouched)">
+        <small class="alert-danger" *ngIf="lastName.errors?.['required']">Field should not be empty</small>
+    </span>
+</div>
+<div >
+<div  class="form-check">
+    <label >Gender : </label>
+    <br>
+   <label class="form-check form-check-inline"> Male<input type="radio"  id="gender" [(ngModel)]="tourists.gender" name="Male" value="Male"   ></label>
+   
+   <label class="form-check form-check-inline" >Female<input type="radio"  id="gender" [(ngModel)]="tourists.gender" name="Female" value="Female"   ></label>
+
+</div>
+</div>
+<div >
+    <label >Age</label>
+    <input type="number" class="form-control border-success" id="age"   min="0" max="90" [(ngModel)]="tourists.age" name="age"  value=""required #age="ngModel"  >
+
+    <span *ngIf="age.invalid && (age.dirty || age.untouched)">
+        <small class="alert-danger" *ngIf="age.errors?.['required']">Field should not be empty</small>
+    </span>
+
+</div>
+<div >
+    <label >From Place</label>
+    <input type="text" onkeydown="return /[a-z]/i.test(event.key)" class="form-control border-success" id="fromPlace" [(ngModel)]="tourists.fromPlace" name="fromPlace" maxlength="15" value="" required #fromPlace="ngModel"  >
+
+    <span *ngIf="fromPlace.invalid && (fromPlace.dirty || fromPlace.untouched)">
+        <small class="alert-danger" *ngIf="fromPlace.errors?.['required']">Field should not be empty</small>
+    </span>
+
+
+</div>
+<div >
+    <label>No. Of days</label>
+    <input type="number" class="form-control border-success" id="numberOfdays"  min="0" max="9999" [(ngModel)]="tourists.numberOfdays" name="numberOfdays"  value="" required  #numberOfDays="ngModel" >
+
+    <span *ngIf="numberOfDays.invalid && (numberOfDays.dirty || numberOfDays.untouched)">
+        <small class="alert-danger" *ngIf="numberOfDays.errors?.['required']">Field should not be empty</small>
+    </span>
+
+</div>
+<div>
+    <br>
+<button  class="btn btn-success"type="Submit">Add</button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</body>
+</div>
+
+
+
