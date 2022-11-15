@@ -13,7 +13,7 @@
 <div   >
     
     <label >Id</label>
-    <input  type="number"    min="0" max="9999" class="form-control border-success" id="id" [(ngModel)]="tourists.id" name="id"   value=""required pattern="[0-9]{4}"   #id="ngModel">
+    <input  type="number"    min="1" max="9999" class="form-control border-success" id="id" [(ngModel)]="tourists.id" name="id"   value=""required pattern="[0-9]{4}"   #id="ngModel">
     
     <span *ngIf="id.invalid && (id.dirty || id.untouched)">
     <small class="alert-danger" *ngIf="id.errors?.['required']">Field should not be empty</small>
